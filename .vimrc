@@ -27,3 +27,9 @@ autocmd BufWritePost *.py call Flake8()
 command D :normal iimport pdb; pdb.set_trace()
 
 colorscheme darkblue
+
+
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd BufWritePre     *.py :call TrimWhiteSpace()
