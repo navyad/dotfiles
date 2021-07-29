@@ -33,3 +33,23 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 autocmd BufWritePre     *.py :call TrimWhiteSpace()
+
+
+"hightlight cursor
+set cursorline
+"autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
+"autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+
+"ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+
+" gruvbox color theme
+autocmd vimenter * ++nested colorscheme gruvbox
+
+
+" new window in ctrlp
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
